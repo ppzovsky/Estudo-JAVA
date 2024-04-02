@@ -1,8 +1,5 @@
 package ExerciciosSerratec;
 public class Exercicio2 {
-    public Exercicio2() {
-    }
-
     public static void main(String[] args){
 
         Calcado tenis = new Calcado("Nike", 40, 359.90);
