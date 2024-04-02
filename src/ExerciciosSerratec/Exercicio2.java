@@ -11,7 +11,7 @@ public class Exercicio2 {
         tenis.cor = "Branco";
         tenis.modelo = "Air Max 280";
 
-        System.out.println(tenis);
+        //System.out.println(tenis);
 
         Calcado sandalia = new Calcado("Melissa", 35, 192.50);
 
@@ -19,7 +19,10 @@ public class Exercicio2 {
         sandalia.cor = "Marfim";
         sandalia.modelo = "Luísa Sonza";
 
-        System.out.println(sandalia);
-    }
+        //System.out.println(sandalia);
 
+        Vendedor vendedor= new Vendedor("Felipe", "1222333",
+                new Endereco("Rua Marfim",400, "São Luís", "85892000"));
+        System.out.println(vendedor);
+    }
 }
