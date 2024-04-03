@@ -7,6 +7,10 @@ public class Pessoa {
     private double peso;
     private int idade;
 
+    public double calcula_imc(){
+        return peso/(altura*altura);
+    }
+
     public String getNome() {
         return nome;
     }
@@ -55,12 +59,6 @@ public class Pessoa {
 
     @Override
     public String toString() {
-        return "Pessoa{" +
-                "nome='" + nome + '\'' +
-                ", genero='" + genero + '\'' +
-                ", altura=" + altura +
-                ", peso=" + peso +
-                ", idade=" + idade +
-                '}';
+        return String.format("Nome: %s\t\tGenero: %s\t\tIdade: %d\nAltura: %.2f\t\tPeso: %.2f\t\tIMC: %.2f", nome, genero, idade, altura, peso, calcula_imc());
     }
 }
