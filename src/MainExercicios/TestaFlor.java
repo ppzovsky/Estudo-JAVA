@@ -3,10 +3,11 @@ package MainExercicios;
 import java.time.LocalDate;
 
 import ExerciciosSerratec.EstoqueFlor;
-import ExerciciosSerratec.Floricultura;
-public class VendaFlor {
+import ExerciciosSerratec.VendaFlor;
+import ExerciciosSerratec.Flor;
+public class TestaFlor {
     public static void main(String[] args) {
-        Floricultura venda = new Floricultura("Antulio", 45.9);
+        VendaFlor venda = new VendaFlor("Antulio", 45.9);
         venda.setDataVenda(LocalDate.of(2024,4,3));
 
         System.out.println(venda);

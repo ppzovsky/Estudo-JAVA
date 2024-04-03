@@ -1,8 +1,6 @@
 package ExerciciosSerratec;
 
-import java.time.LocalDate;
-
-public class EstoqueFlor extends Floricultura{
+public class EstoqueFlor extends Flor {
 
     private int quantidade;
 
@@ -21,10 +19,9 @@ public class EstoqueFlor extends Floricultura{
 
     @Override
     public String toString() {
-        return String.format("""
-                Flor: %s
-                Preco: %.2f
+        return super.toString() + String.format(
+                """
                 Quantidade em estoque: %d
-                """, this.getFlor(), this.getPreco(), quantidade);
+                """, quantidade);
     }
 }
