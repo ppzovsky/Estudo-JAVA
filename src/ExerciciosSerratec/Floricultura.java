@@ -7,10 +7,9 @@ public class Floricultura {
     private double preco;
     private LocalDate dataVenda;
 
-    public Floricultura(String flor, double preco, LocalDate dataVenda) {
+    public Floricultura(String flor, double preco) {
         this.flor = flor;
         this.preco = preco;
-        this.dataVenda = dataVenda;
     }
 
     public String getFlor() {
@@ -39,10 +38,10 @@ public class Floricultura {
 
     @Override
     public String toString() {
-        return "Floricultura{" +
-                "flor='" + flor + '\'' +
-                ", preco=" + preco +
-                ", dataVenda=" + dataVenda +
-                '}';
+        return String.format("""
+                Flor: %s
+                Preco: %.2f
+                Data da Venda: %s
+                """, flor, preco, dataVenda);
     }
 }
