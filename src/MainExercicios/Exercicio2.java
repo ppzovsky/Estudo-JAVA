@@ -1,4 +1,8 @@
-package ExerciciosSerratec;
+package MainExercicios;
+import ExerciciosSerratec.Calcado;
+import ExerciciosSerratec.Endereco;
+import ExerciciosSerratec.Vendedor;
+
 public class Exercicio2 {
     public static void main(String[] args){
 

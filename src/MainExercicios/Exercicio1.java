@@ -1,4 +1,4 @@
-package ExerciciosSerratec;
+package MainExercicios;
 
 import java.util.Scanner;
 public class Exercicio1 {

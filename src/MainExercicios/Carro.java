@@ -1,6 +1,8 @@
-package Exercícios;
+package MainExercicios;
 
-public class Carro extends Veiculo{
+import Exercícios.Veiculo;
+
+public class Carro extends Veiculo {
     public int cilindrada;
     public boolean airbag;
     public String nome;

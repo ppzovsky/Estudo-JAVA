@@ -1,4 +1,5 @@
-package ExerciciosSerratec;
+package MainExercicios;
+import ExerciciosSerratec.Pessoa;
 public class TestaPessoa extends Pessoa {
     public TestaPessoa(String nome, String genero, int idade) {
         super(nome, genero, idade);
