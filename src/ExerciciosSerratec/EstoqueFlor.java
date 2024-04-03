@@ -19,7 +19,8 @@ public class EstoqueFlor extends Flor {
 
     @Override
     public String toString() {
-        return super.toString() + String.format(
+        return super.toString() +
+                String.format(
                 """
                 Quantidade em estoque: %d
                 """, quantidade);

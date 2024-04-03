@@ -17,7 +17,8 @@ public class VendaFlor extends Flor {
 
     @Override
     public String toString() {
-        return super.toString() + String.format(
+        return super.toString() +
+                String.format(
                 """
                 Data da Venda: %s
                 """ , dataVenda);
