@@ -1,6 +1,8 @@
 package ExerciciosSerratec;
 
 import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 
 public class VendaFlor extends Flor {
     public VendaFlor(String flor, double preco) {
@@ -15,12 +17,23 @@ public class VendaFlor extends Flor {
         this.dataVenda = dataVenda;
     }
 
+    public int tempoVenda(){
+        LocalDate dataAtual = LocalDate.now();
+        Period periodo = Period.between(dataVenda, dataAtual);
+        int dias = periodo.getDays();
+        int meses = periodo.getMonths();
+        int diasTotais = (meses*30)+dias;
+        return diasTotais;
+    }
+
     @Override
     public String toString() {
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         return super.toString() +
                 String.format(
                 """
                 Data da Venda: %s
-                """ , dataVenda);
+                Tempo de Venda: %s dias
+                """ , df.format(dataVenda), tempoVenda());
     }
 }
