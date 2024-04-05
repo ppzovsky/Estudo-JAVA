@@ -1,7 +1,7 @@
 package MainExercicios;
 import ExerciciosSerratec.Calcado;
 import ExerciciosSerratec.Endereco;
-import ExerciciosSerratec.Vendedor;
+import ExerciciosSerratec.Entregador;
 
 public class Exercicio2 {
     public static void main(String[] args){
@@ -22,7 +22,7 @@ public class Exercicio2 {
 
         //System.out.println(sandalia);
 
-        Vendedor vendedor= new Vendedor("Felipe", "1222333",
+        Entregador vendedor= new Entregador("Felipe", "1222333",
                 new Endereco("Rua Marfim",400, "São Luís", "85892000"));
         System.out.println(vendedor);
     }

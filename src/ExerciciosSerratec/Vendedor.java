@@ -1,22 +1,41 @@
 package ExerciciosSerratec;
 
-public class Vendedor {
-    String nome;
-    String cpf;
-    Endereco endereco;
+public class Vendedor extends Funcionario{
 
-    public Vendedor(String nome, String cpf, Endereco endereco) {
-        this.nome = nome;
-        this.cpf = cpf;
-        this.endereco = endereco;
+    public Vendedor(String nome, double salario) {
+        super(nome, salario);
+    }
+    private double percComissao;
+    private int totalVendas;
+
+    public double getPercComissao() {
+        return percComissao;
     }
 
+    public void setPercComissao(double percComissao) {
+        this.percComissao = percComissao;
+    }
+
+    public int getTotalVendas() {
+        return totalVendas;
+    }
+
+    public void setTotalVendas(int totalVendas) {
+        this.totalVendas = totalVendas;
+    }
+
+    public double valorvendas(){
+        return totalVendas*100;
+    }
+    public double comissao(){
+        return (percComissao/100) * valorvendas();
+    }
     @Override
     public String toString() {
-        return "Vendedor{" +
-                "nome='" + nome + '\'' +
-                ", cpf='" + cpf + '\'' +
-                ", endereco=" + endereco +
-                '}';
+        return super.toString() +
+                String.format("""
+                        Total de Vendas: %d
+                        Valor da Comissao: %.2f
+                        """, totalVendas, comissao());
     }
 }
