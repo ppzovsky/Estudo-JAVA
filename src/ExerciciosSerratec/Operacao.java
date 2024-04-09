@@ -6,13 +6,6 @@ public class Operacao implements Opcao{
     private double valorOperacao;
     private Livro livro;
 
-    public Operacao(String tipo, double valorOperacao, Livro livro) {
-        super();
-        this.tipo = tipo;
-        this.valorOperacao = valorOperacao;
-        this.livro = livro;
-    }
-
     public Livro getLivro() {
         return livro;
     }
@@ -30,26 +23,25 @@ public class Operacao implements Opcao{
         return valorOperacao;
     }
 
-    public void venderLivro() {}
-
-    public void emprestarLivro() {}
-
-
     @Override
     public void emprestar() {
-        // TODO Auto-generated method stub
-
+        tipo = "Emprestimo";
+        valorOperacao = livro.getValor() * Opcao.taxaEmprestimo / 100;
     }
 
     @Override
     public void vender() {
-        // TODO Auto-generated method stub
-
+        tipo = "Venda";
+        valorOperacao = livro.getValor();
     }
 
     @Override
     public String toString() {
-        return "Operacao [tipo=" + tipo + ", valorOperacao=" + valorOperacao + ", livro=" + livro + "]";
+        return String.format("""
+                Tipo: %s
+                Valor: %s
+                %s
+                """, tipo, valorOperacao, livro);
     }
 
 }

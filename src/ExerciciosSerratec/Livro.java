@@ -6,10 +6,9 @@ public class Livro{
     private double valor;
 
 
-    public Livro(String autor, String titulo, double valor) {
-        super();
-        this.autor = autor;
+    public Livro(String titulo, String autor, double valor) {
         this.titulo = titulo;
+        this.autor = autor;
         this.valor = valor;
     }
     public String getAutor() {
@@ -23,11 +22,15 @@ public class Livro{
     }
 
     public void reajuste(double valor) {
-
+        this.valor += valor;
     }
     @Override
     public String toString() {
-        return "Autor: " + autor + "\nTitulo: " + titulo + "\nValor: " + valor;
+        return String.format("""
+                Titulo: %s
+                Autor: %s
+                Valor: R$%.2f
+                """, titulo, autor, valor);
     }
 
 
