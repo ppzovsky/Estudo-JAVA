@@ -1,11 +1,12 @@
-package ExerciciosSerratec;
+package ClassesBiblioteca;
 
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
-import static ExerciciosSerratec.LeArquivo.leLivros;
+import static ClassesBiblioteca.LeArquivo.leLivros;
+import  static ClassesBiblioteca.ProcuraLivro.buscarLivro;
 public class MenuBiblioteca {
-    public static void menu() throws FileNotFoundException {
+    public static void menu() throws IOException {
 
         String caminhoArquivo = "C:/Users/joaop/OneDrive/Área de Trabalho/JAVA/EstudosJava/listaLivros.txt";
         List<Livro> livros = leLivros(caminhoArquivo);
@@ -16,7 +17,8 @@ public class MenuBiblioteca {
                 2- COMPRAR UM LIVRO 
                 3- PEGAR UM LIVRO EMPRESTADO
                 4- ADICIONAR UM LIVRO
-                5- SAIR
+                5- VER UM LIVRO
+                6- SAIR
                 """);
         int opcao = op.nextInt();
         switch (opcao){
@@ -33,11 +35,23 @@ public class MenuBiblioteca {
                 }
 
             case 2:
-
+                VendeLivro.venderLivro();
             case 3:
+                EmprestaLivro.emprestarLivro();
             case 4:
             case 5:
+                Livro livroEncontrado = buscarLivro(livros);
+                System.out.println(livroEncontrado);
+                System.out.println("Pressione 1 para voltar ao menu");
+                opcao = op.nextInt();
+                if (opcao == 1) {
+                    menu();
+                    break;
+                }
+            case 6:
+                System.out.println("\nOBRIGADO POR LER COM A GENTE");
+                break;
 
-        }while (opcao!=5);
+        }
     }
 }

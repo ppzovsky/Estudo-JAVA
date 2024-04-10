@@ -1,6 +1,6 @@
-package ExerciciosSerratec;
+package ClassesBiblioteca;
 
-public class Operacao implements Opcao{
+public class Operacao implements Opcao {
 
     private String tipo;
     private double valorOperacao;
@@ -30,7 +30,7 @@ public class Operacao implements Opcao{
     }
 
     @Override
-    public void vender() {
+    public void vender(Livro livroEncontrado) {
         tipo = "Venda";
         valorOperacao = livro.getValor();
     }
@@ -40,8 +40,7 @@ public class Operacao implements Opcao{
         return String.format("""
                 Tipo: %s
                 Valor: %s
-                %s
-                """, tipo, valorOperacao, livro);
+                """, tipo, valorOperacao);
     }
 
 }

@@ -1,9 +1,9 @@
-package ExerciciosSerratec;
+package ClassesBiblioteca;
 
 public interface Opcao {
     double taxaEmprestimo = 2.8;
 
     void emprestar();
 
-   void vender();
+   void vender(Livro livroEncontrado);
 }
