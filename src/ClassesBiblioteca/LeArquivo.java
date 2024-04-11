@@ -7,7 +7,7 @@ import java.util.List;
 public class LeArquivo {
     public static List<Livro> leLivros(String caminhoArquivo) throws IOException {
         BufferedReader txt = new BufferedReader(new FileReader("C:/Users/joaop/OneDrive/Área de Trabalho/JAVA/EstudosJava/listaLivros.txt"));
-        List<Livro> livros = new ArrayList<>();
+        List<Livro> livros = new ArrayList();
 
         String linha;
         while ((linha = txt.readLine()) != null) {
