@@ -10,15 +10,13 @@ Este repositório contém diversos exercícios de Programação Orientada a Obje
     * Polimorfismo
     * Interfaces
     * Coleções
-    * E muito mais!
-* **Solução:** Cada exercício é acompanhado de sua respectiva solução, com comentários explicativos.
-* **Organização:** Os exercícios estão organizados por tópico, facilitando a navegação e o aprendizado.
+    * Sobrecarga
+* **Organização:** Os exercícios estão organizados em packages, com as devidas classes, facilitando a navegação, todas as mains estão juntas.
 
 **Como usar:**
 
 * **Clone o repositório:** Para começar, faça um clone deste repositório para sua máquina local.
-* **Navegue pelos exercícios:** Explore os diferentes tópicos e encontre os exercícios que deseja realizar.
-* **Analise as soluções:** Leia os comentários nas soluções para entender melhor a implementação de cada exercício.
+* **Navegue pelos exercícios:** Explore os diferentes tópicos e veja exemplos.
 * **Utilize como referência:** Use este repositório como referência para seus próprios estudos e exercícios de POO.
 
 **Contribuições:**
