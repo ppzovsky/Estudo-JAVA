@@ -4,6 +4,7 @@ out/
 !**/src/test/**/out/
 .idea
 EstudosJava.iml
+Estudo-JAVA.iml
 
 ### Eclipse ###
 .apt_generated
