@@ -5,10 +5,10 @@ import java.util.List;
 import java.util.Scanner;
 import static ClassesBiblioteca.LeArquivo.leLivros;
 import  static ClassesBiblioteca.ProcuraLivro.buscarLivro;
-public class MenuBiblioteca {
+public class    MenuBiblioteca {
     public static void menu() throws IOException {
 
-        String caminhoArquivo = "C:/Users/joaop/OneDrive/Área de Trabalho/JAVA/EstudosJava/listaLivros.txt";
+        String caminhoArquivo = "C:/Users/joaop/OneDrive/Área de Trabalho/JAVA/Estudo-JAVA/listaLivros.txt";
         List<Livro> livros = leLivros(caminhoArquivo);
         Scanner op = new Scanner(System.in);
 
@@ -40,8 +40,8 @@ public class MenuBiblioteca {
                 EmprestaLivro.emprestarLivro();
             case 4:
             case 5:
-                Livro livroEncontrado = buscarLivro(livros);
-                System.out.println(livroEncontrado);
+                //Livro livroEncontrado = buscarLivro(livros);
+                //System.out.println(livroEncontrado);
                 System.out.println("Pressione 1 para voltar ao menu");
                 opcao = op.nextInt();
                 if (opcao == 1) {
@@ -53,5 +53,6 @@ public class MenuBiblioteca {
                 break;
 
         }
+        op.close();
     }
 }

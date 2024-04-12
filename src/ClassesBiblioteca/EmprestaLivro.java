@@ -10,25 +10,25 @@ import static ClassesBiblioteca.ProcuraLivro.buscarLivro;
 
 public class EmprestaLivro{
     public static void emprestarLivro() throws IOException {
-        String caminhoArquivo = "C:/Users/joaop/OneDrive/Área de Trabalho/JAVA/EstudosJava/listaLivros.txt";
+        String caminhoArquivo = "C:/Users/joaop/OneDrive/Área de Trabalho/JAVA/Estudo-JAVA/listaLivros.txt";
         List<Livro> livros = leLivros(caminhoArquivo);
         Scanner op = new Scanner(System.in);
         int opcao = 0;
-        Livro livroEncontrado = buscarLivro(livros);
-        System.out.println(livroEncontrado);
+        int livroEncontrado = buscarLivro(livros);
 
-        if (livroEncontrado != null) {
+        if (livroEncontrado > 0 ) {
             System.out.println(String.format("""
-                            1- CONFIRMAR COMPRA
+                            1- CONFIRMAR EMPRESTIMO
                             2- BUSCAR OUTRO LIVRO
-                            3- CANCELAR COMPRA
+                            3- CANCELAR EMPRESTIMO
                             """));
             opcao = op.nextInt();
             switch (opcao){
                 case 1:
+                    Livro livroVenda = livros.get(livroEncontrado);
                     Operacao operacao = new Operacao();
-                    operacao.setLivro(livroEncontrado);
-                    operacao.vender(livroEncontrado);
+                    operacao.setLivro(livroVenda);
+                    operacao.emprestar(livroVenda);
                     System.out.println(operacao);
                     menu();
                     break;
@@ -51,7 +51,7 @@ public class EmprestaLivro{
         else {
             System.out.println(String.format("""
                             1- BUSCAR OUTRO LIVRO
-                            2- CANCELAR COMPRA
+                            2- CANCELAR EMPRESTIMO
                             """));
             opcao = op.nextInt();
 

@@ -3,7 +3,7 @@ package ClassesBiblioteca;
 public interface Opcao {
     double taxaEmprestimo = 2.8;
 
-    void emprestar();
+    void emprestar(Livro livroVenda);
 
-   void vender(Livro livroEncontrado);
+   void vender(Livro livroVenda);
 }

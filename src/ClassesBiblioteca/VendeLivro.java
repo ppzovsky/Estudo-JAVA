@@ -1,5 +1,8 @@
 package ClassesBiblioteca;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
@@ -7,17 +10,17 @@ import java.util.Scanner;
 import static ClassesBiblioteca.LeArquivo.leLivros;
 import static ClassesBiblioteca.MenuBiblioteca.menu;
 import static ClassesBiblioteca.ProcuraLivro.buscarLivro;
+import static ClassesBiblioteca.EditaArquivo.editar;
 
 public class VendeLivro {
     public static void venderLivro() throws IOException {
-        String caminhoArquivo = "C:/Users/joaop/OneDrive/Área de Trabalho/JAVA/EstudosJava/listaLivros.txt";
+        String caminhoArquivo = "C:/Users/joaop/OneDrive/Área de Trabalho/JAVA/Estudo-JAVA/listaLivros.txt";
         List<Livro> livros = leLivros(caminhoArquivo);
         Scanner op = new Scanner(System.in);
         int opcao = 0;
-        Livro livroEncontrado = buscarLivro(livros);
-        System.out.println(livroEncontrado);
+        int livroEncontrado = buscarLivro(livros);
 
-        if (livroEncontrado != null) {
+        if (livroEncontrado > 0 ) {
             System.out.println(String.format("""
                             1- CONFIRMAR COMPRA
                             2- BUSCAR OUTRO LIVRO
@@ -26,9 +29,13 @@ public class VendeLivro {
             opcao = op.nextInt();
             switch (opcao){
                 case 1:
+                    Livro livroVenda = livros.get(livroEncontrado);
                     Operacao operacao = new Operacao();
-                    operacao.setLivro(livroEncontrado);
-                    operacao.vender(livroEncontrado);
+                    operacao.setLivro(livroVenda);
+                    operacao.vender(livroVenda);
+                    livros.remove(livros.get(livroEncontrado));
+                    System.out.println(livros);//removo o livro da lista
+                    editar(livros);
                     System.out.println(operacao);
                     menu();
                     break;
@@ -70,5 +77,6 @@ public class VendeLivro {
                     break;
             }
         }
+        op.close();
     }
 }

@@ -24,13 +24,13 @@ public class Operacao implements Opcao {
     }
 
     @Override
-    public void emprestar() {
+    public void emprestar(Livro livroVenda) {
         tipo = "Emprestimo";
         valorOperacao = livro.getValor() * Opcao.taxaEmprestimo / 100;
     }
 
     @Override
-    public void vender(Livro livroEncontrado) {
+    public void vender(Livro livroVenda) {
         tipo = "Venda";
         valorOperacao = livro.getValor();
     }
